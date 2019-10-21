@@ -12,8 +12,8 @@ while True:
 #    s[0] = str(int (ser.readline(),16))
 #    print(s[0])
 #    print(read_serial)
-
-    print(i)
+    k = bin(i)
+    print(k)
     ser.write(i)
     i = i+1
     time.sleep(0.1)
