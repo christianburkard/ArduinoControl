@@ -1,6 +1,6 @@
 import serial
 
-ser = serial.Serial('/dev/ttyUSB1',115200)
+ser = serial.Serial('/dev/ttyUSB1',19200)
 s = [0,1]
 while True:
     read_serial=ser.readline()
