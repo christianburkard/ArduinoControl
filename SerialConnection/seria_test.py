@@ -15,7 +15,7 @@ while True:
 #    s[0] = str(int (ser.readline(),16))
 #    print(s[0])
 #    print(read_serial)
-    k = bin(i)
+    k = i
     print(k)
     ser.write(str(k))
     i = i+1
