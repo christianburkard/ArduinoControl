@@ -1,28 +1,18 @@
+
 import serial
 import time
-import keyboard
-import cv2
-#import smbus
-import time
-import os
-#
-ser = serial.Serial('/dev/ttyUSB1',19200,timeout =0,parity = serial.PARITY_EVEN,rtscts=1)
-ser.read(size=100)
-s = [0,1]
-i = 1
-while True:
-#    read_serial=ser.readline()
-#    s[0] = str(int (ser.readline(),16))
-#    print(s[0])
-#    print(read_serial)
-    k = i
-    print(k)
-    ser.write(k)
-    i = i+1
-    time.sleep(0.5)
-    key = cv2.waitKey(1) & 0xFF
-    if key == ord("r"):
-        quit()
+
+s = serial.Serial('/dev/ttyUSB1', 9600) # Namen ggf. anpassen
+s.open()
+time.sleep(5) # der Arduino resettet nach einer Seriellen Verbindung, daher muss kurz gewartet werden
+
+s.write("test")
+try:
+    while True:
+        response = s.readline()
+        print(response)
+except KeyboardInterrupt:
+    s.close()
 
 #have to run 'sudo apt-get install python-smbus'
 
