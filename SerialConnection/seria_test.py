@@ -2,7 +2,7 @@ import serial
 import time
 import keyboard
 import cv2
-import smbus
+#import smbus
 import time
 import os
 #
@@ -17,7 +17,7 @@ while True:
 #    print(read_serial)
     k = i
     print(k)
-    ser.write(str(k))
+    ser.write(k)
     i = i+1
     time.sleep(0.5)
     key = cv2.waitKey(1) & 0xFF
