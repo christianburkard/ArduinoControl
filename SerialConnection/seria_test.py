@@ -17,7 +17,7 @@ while True:
 #    print(read_serial)
     k = bin(i)
     print(k)
-    ser.write(b'H')
+    ser.write(str(chr(k)))
     i = i+1
     time.sleep(0.5)
     key = cv2.waitKey(1) & 0xFF
