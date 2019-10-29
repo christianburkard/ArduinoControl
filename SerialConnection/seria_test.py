@@ -82,7 +82,7 @@ class GUI:
             global serPC
             print("Establishing serial connection between Computer and Arduino ...")
             try:
-                serPC = serial.Serial('/dev/ttyUSB0',115200,timeout =0,parity = serial.PARITY_EVEN,rtscts=1)
+                serPC = serial.Serial('/dev/ttyACM0',115200,timeout =0,parity = serial.PARITY_EVEN,rtscts=1)
                 print("Connection established!")
                 return serPC
             except:
